@@ -1,0 +1,6 @@
+.vs
+DownloadApp/obj/*
+DownloadApp/bin/*
+DownloadApp/bin/Debug/*
+DownloadApp/bin/Debug/app.publish/*
+PlayService/

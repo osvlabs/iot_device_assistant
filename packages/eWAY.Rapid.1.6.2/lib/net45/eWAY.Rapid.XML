@@ -1,0 +1,1954 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>eWAY.Rapid</name>
+    </assembly>
+    <members>
+        <member name="T:eWAY.Rapid.Enums.BeagleVerifyStatus">
+            <summary>
+            Possible values returned from the responsive shared page beagle verify feature.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.BeagleVerifyStatus.NotVerified">
+            <summary>
+            No attempt at verification was made
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.BeagleVerifyStatus.Attempted">
+            <summary>
+            Verification was attempted
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.BeagleVerifyStatus.Verified">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.BeagleVerifyStatus.Failed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Enums.FilterMatchType">
+            <summary>
+            Filter Match Type. Only Equals is supported at the moment.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FilterMatchType.Undefined">
+            <summary>Unused</summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FilterMatchType.Equals">
+            <summary>Value is the same</summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FilterMatchType.Contains">
+            <summary>Unused</summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FilterMatchType.StartsWith">
+            <summary>Unused</summary>
+        </member>
+        <member name="T:eWAY.Rapid.Enums.FraudAction">
+            <summary>
+            Defines the possible actions that may have been taken when/if an anti-fraud rule on the account has been triggered.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FraudAction.NotChallenged">
+            <summary>
+            Normal Transaction
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FraudAction.Allow">
+            <summary>
+            Transaction was allowed
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FraudAction.Review">
+            <summary>
+            Transaction was held for review
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FraudAction.PreAuth">
+            <summary>
+            Transaction was held for review and pre-authed	
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FraudAction.Processed">
+            <summary>
+            Transaction was processed
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FraudAction.Approved">
+            <summary>
+            Transaction was approved when reviewed
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.FraudAction.Block">
+            <summary>
+            Transaction was not approved when reviewed
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Enums.NamespaceDoc">
+            <summary>
+            Contains enums of the SDK.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Enums.PaymentMethod">
+            <summary>
+            This defines what method will be used by the transaction to determine the credit card used to process the transaction
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.PaymentMethod.Direct">
+            <summary>
+            The Card is supplied in the Transaction Request itself (in the Customer.CardDetails member, or from the Customer's card in the eWay vault). 
+            If supplied from the request, the Card Data can either be plaintext (for PCI Compliant Customers) or encrypted using the client-side eCrypt 
+            javascript library. For this Paymentmethod, the transaction/authorisation is processed immediately.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.PaymentMethod.ResponsiveShared">
+            <summary>
+            The Card will be supplied by redirecting the cardholder to the Responsive Shared PageeWay. For this PaymentMethod, the transaction/authorisation 
+            is processed once the cardholder submits the responsive shared page.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.PaymentMethod.TransparentRedirect">
+            <summary>
+            The Card will supplied by a form post from a Transparent Redirect page. For this PaymentMethod, the transaction/authorisation is processed 
+            when the form is posted.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.PaymentMethod.Wallet">
+            <summary>
+            The Card will be obtained from a digital wallet (e.g. Visa Checkout).
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.PaymentMethod.Authorisation">
+            <summary>
+            A previously created authorisation will be used to create the transaction by using an Auth Capture.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Enums.RequestMethod">
+            <summary>
+            Request Method
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.RequestMethod.ProcessPayment">
+            <summary>Process a standard payment</summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.RequestMethod.CreateTokenCustomer">
+            <summary>Create a token customer</summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.RequestMethod.UpdateTokenCustomer">
+            <summary>Update a token customer</summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.RequestMethod.TokenPayment">
+            <summary>Process a payment with a Token Customer</summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.RequestMethod.Authorise">
+            <summary>Process a pre-auth transaction - funds are only held from the customer's card</summary>
+        </member>
+        <member name="T:eWAY.Rapid.Enums.CardType">
+            <summary>
+            Defines the possible card types for filtering a settlement search
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.ALL">
+            <summary>
+            All cards
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.VI">
+            <summary>
+            Visa
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.MC">
+            <summary>
+            Mastercard
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.AX">
+            <summary>
+            AMEX
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.DC">
+            <summary>
+            Diners Club
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.JC">
+            <summary>
+            JCB
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.MD">
+            <summary>
+            Maestro UK
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.MI">
+            <summary>
+            Maestro International
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.SO">
+            <summary>
+            Solo
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.LA">
+            <summary>
+            Laser
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.CardType.DS">
+            <summary>
+            Discover
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Enums.SettlementSearchMode">
+            <summary>
+            Defines the possible types of settlement reports
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.SettlementSearchMode.SummaryOnly">
+            <summary>
+            This mode will ONLY query the settlement summary.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.SettlementSearchMode.TransactionOnly">
+            <summary>
+            This mode will ONLY query the settlement transactions (individually).
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.SettlementSearchMode.Both">
+            <summary>
+            This mode will query both the Settlement summary, as well as the settlement transactions.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Enums.ShippingMethod">
+            <summary>
+            Defines the possible types of shiping used for a transaction
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.ShippingMethod.Unknown">
+            <summary>
+            Method is unknown.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.ShippingMethod.LowCost">
+            <summary>
+            A low cost method is used
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.ShippingMethod.DesignatedByCustomer">
+            <summary>
+            The customer has chosen the method
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.ShippingMethod.International">
+            <summary>
+            Item will be shipped international
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.ShippingMethod.Military">
+            <summary>
+            Item will be shipped via the military
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.ShippingMethod.NextDay">
+            <summary>
+            Item will be delivered the next day
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.ShippingMethod.StorePickup">
+            <summary>
+            Item will be picked up from a physical location
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.ShippingMethod.TwoDayService">
+            <summary>
+            Item will be delivered in two days
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.ShippingMethod.ThreeDayService">
+            <summary>
+            Item will be delivered in three days
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.ShippingMethod.Other">
+            <summary>
+            A shipping method not listed
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Enums.TransactionTypes">
+            <summary>
+            This defines the type of the transaction, it is a very close mapping to the bank accepted types, 
+            note the types Refund and Auth are missing as they are handled using dedicated requests.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.TransactionTypes.Unknown">
+            <summary>
+            Unkonwn transaction type
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.TransactionTypes.Purchase">
+            <summary>
+            Used for a single purchase where the card is present. This will require that the CVN details are supplied.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.TransactionTypes.Recurring">
+            <summary>
+            Used for a recurring transaction where the card details have been stored. This transaction type should be used when charging with a Token Customer
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.TransactionTypes.MOTO">
+            <summary>
+            Mail order or Telephone Transaction. Used when the card is not at hand. Can also be used when charging a Token customer.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Enums.VerifyStatus">
+            <summary>
+            Possible values returned from the payment providers with regards to verification of card/user details.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.VerifyStatus.Unchecked">
+            <summary>No verification</summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.VerifyStatus.Valid">
+            <summary>Verification succeeded</summary>
+        </member>
+        <member name="F:eWAY.Rapid.Enums.VerifyStatus.Invalid">
+            <summary>Verification failed</summary>
+        </member>
+        <member name="P:eWAY.Rapid.Internals.Models.LineItem.SKU">
+            <summary>
+            ID of the Line Item's product
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Internals.Models.LineItem.Description">
+            <summary>
+            Product description of the item
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Internals.Models.LineItem.Quantity">
+            <summary>
+            The number of items
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Internals.Models.LineItem.UnitCost">
+            <summary>
+            Price (in cents) of each item
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Internals.Models.LineItem.Tax">
+            <summary>
+            Combined tax (in cents) for all the items
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Internals.Models.LineItem.Total">
+            <summary>
+            Total (including Tax) for all the items.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Internals.Models.Payment">
+            <summary>
+            CreateAccessCodeResponse Payment class
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Internals.Services.RapidService">
+            <summary>
+            Internal Client class that does the invocation of Rapid native API call
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.IRapidClient">
+            <summary>
+            Public interface to  create/query transactions and customers
+            </summary>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.SetCredentials(System.String,System.String)">
+            <summary>
+            Called to change the credentials the RapidSDKClient is using to communicate with Rapid API.
+            </summary>
+            <param name="apiKey">Rapid API Key (from MYeWAY)</param>
+            <param name="password">Password matching the API Key</param>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.SetVersion(System.Int32)">
+            <summary>
+            Set the Rapid API version to use
+            </summary>
+            <param name="version">Rapid API version</param>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.Create(eWAY.Rapid.Enums.PaymentMethod,eWAY.Rapid.Models.Transaction)">
+            <summary>
+            This Method is used to create a transaction for the merchant in their eWAY account
+            </summary>
+            <param name="paymentMethod">
+            Describes where the card details will be coming from for this transaction (Direct, Responsive Shared, 
+            Transparent Redirect etc).
+            </param>
+            <param name="transaction">Request containing the transaction details</param>
+            <returns>CreateTransactionResponse</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.Create(eWAY.Rapid.Enums.PaymentMethod,eWAY.Rapid.Models.Customer)">
+            <summary>
+            This Method is used to create a token customer for the merchant in their eWAY account. 
+            </summary>
+            <param name="paymentMethod">Describes where the card details will be coming from that will be saved with the new token customer
+            (Direct, Responsive Shared, Transparent Redirect etc).</param>
+            <param name="customer">Request containing the Customer details</param>
+            <returns>CreateCustomerResponse</returns>
+            <remarks>
+            Like the CreateTransaction, a PaymentMethod is specified which determines what method will be used to capture the card that will 
+            be saved with the customer. Depending on the PaymentMethod the customer may be created immediately, or it may be pending (waiting 
+            for Card Details to be supplied by the Responsive Shared Page, or Transparent Redirect). 
+            The SDK will use the PaymentMethod parameter to determine what type of transaction to create rather than attempting to determine 
+            the method to use implicitly (e.g. from the presence of CardDetails in a Customer).
+            </remarks>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.UpdateCustomer(eWAY.Rapid.Enums.PaymentMethod,eWAY.Rapid.Models.Customer)">
+            <summary>
+            This Method is used to update a token customer for the merchant in their eWAY account. 
+            </summary>
+            <param name="paymentMethod">Describes where the card details will be coming from that will be saved with the new token customer
+            (Direct, Responsive Shared, Transparent Redirect etc).</param>
+            <param name="customer">Request containing the Customer details</param>
+            <returns>CreateCustomerResponse</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.QueryCustomer(System.Int64)">
+            <summary>
+            This method is used to return the details of a Token Customer. This includes masked Card information for displaying in a UI to a user.
+            </summary>
+            <param name="tokenCustomerId">ID returned in the original create request.</param>
+            <returns>the details of a Token Customer</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.QueryTransaction(eWAY.Rapid.Models.TransactionFilter)">
+            <summary>
+            This method is used to determine the status of a transaction. 
+            </summary>
+            <param name="filter">Filter definition for searching by other fields (e.g. invoice ID).</param>
+            <returns>QueryTransactionResponse</returns>
+            <remarks>
+            However, it's also of use in situations where anti-fraud rules have triggered a transaction hold. 
+            Once the transaction has been reviewed then the status will change, and in some cases the transaction ID as well. 
+            So this method can be used by automated business processes to determine the state of a transaction that might 
+            be under review.
+            </remarks>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.QueryTransaction(System.Int32)">
+            <summary>
+            Gets transaction information given an int eWAY transaction ID
+            (wrapper for the version which uses long)
+            </summary>
+            <param name="transactionId">eWAY Transaction ID for the transaction</param>
+            <returns>QueryTransactionResponse</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.QueryTransaction(System.Int64)">
+            <summary>
+            Gets transaction information given a long eWAY transaction ID
+            </summary>
+            <param name="transactionId">eWAY Transaction ID for the transaction</param>
+            <returns>QueryTransactionResponse</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.QueryTransaction(System.String)">
+            <summary>
+            Gets transaction information given an access code
+            </summary>
+            <param name="accessCode">Access code for the transaction to query</param>
+            <returns>QueryTransactionResponse</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.QueryInvoiceNumber(System.String)">
+            <summary>
+            Gets transaction information given an invoice number
+            </summary>
+            <param name="invoiceNumber">Merchant’s Invoice Number for the transaction</param>
+            <returns>QueryTransactionResponse</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.QueryInvoiceRef(System.String)">
+            <summary>
+            Gets transaction information given an invoice reference
+            </summary>
+            <param name="invoiceRef">The merchant's invoice reference</param>
+            <returns>QueryTransactionResponse</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.Refund(eWAY.Rapid.Models.Refund)">
+            <summary>
+            Refunds all or part of a previous transaction
+            </summary>
+            <param name="refund">Contains the details of the Refund</param>
+            <returns>RefundResponse</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.CapturePayment(eWAY.Rapid.Models.CapturePaymentRequest)">
+            <summary>
+            Complete an authorised transaction with a Capture request
+            </summary>
+            <param name="captureRequest">Contains the details of the Payment</param>
+            <returns>CapturePaymentResponse</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.CancelAuthorisation(eWAY.Rapid.Models.CancelAuthorisationRequest)">
+            <summary>
+            Cancel an authorised transaction with a Cancel request
+            </summary>
+            <param name="cancelRequest">Contains the TransactionId of which needs to be cancelled</param>
+            <returns>CancelAuthorisationResponse</returns>
+        </member>
+        <member name="M:eWAY.Rapid.IRapidClient.SettlementSearch(eWAY.Rapid.Models.SettlementSearchRequest)">
+            <summary>
+            Perform a search of settlements with a given filter
+            </summary>
+            <param name="settlementSearchRequest">Contains the filter to search settlements by</param>
+            <returns>SettlementSearchResponse</returns>
+        </member>
+        <member name="P:eWAY.Rapid.IRapidClient.IsValid">
+            <summary>
+            True if the Client has valid API Key, Password and Endpoint Set.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.IRapidClient.ErrorCodes">
+            <summary>
+            In case of an initialisation error, will contain the Rapid Error code.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.IRapidClient.RapidEndpoint">
+            <summary>
+            Possible values "Production", "Sandbox", or a URL. Production and sandbox will default to the Global Rapid API Endpoints.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.Address">
+            <summary>
+            Address
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Address.Street1">
+            <summary>
+            First line of the street address. e.g. "Unit 1"
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Address.Street2">
+            <summary>
+            Second line of the street address. e.g. "6 Coonabmble st"
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Address.City">
+            <summary>
+            City for the address, e.g. "Gulargambone"
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Address.State">
+            <summary>
+            State or province code. e.g. 'NSW"
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Address.Country">
+            <summary>
+            Two character Country Code. e.g. "AU"
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Address.PostalCode">
+            <summary>
+            e.g. 2828
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.BalanceSummaryPerCardType">
+            <summary>
+            This Response is returned by the Settlement Search Method. 
+            It wraps the balance per card summary for a settlement summary
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.BalanceSummaryPerCardType.CardType">
+            <summary>
+            The code of the card type of this balance
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.BalanceSummaryPerCardType.NumberOfTransactions">
+            <summary>
+            The number of transactions for this balance
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.BalanceSummaryPerCardType.Credit">
+            <summary>
+            The total amount credited in the settlement in cents
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.BalanceSummaryPerCardType.Debit">
+            <summary>
+            The total amount debited in this settlement in cents
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.BalanceSummaryPerCardType.Balance">
+            <summary>
+            The total balance settled in this settlement in cents 
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.BaseResponse">
+            <summary>
+            Base Response
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.BaseResponse.Errors">
+            <summary>
+            List of all validation, processing, fraud or system errors that occurred when processing this request. 
+            Null if no errors occured. This member combines all errors related to the request.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.SettlementSearchResponse">
+            <summary>
+            This Response is returned by the Settlement Search Method. 
+            It contains the settlment summaries and/or the settlement transactions requested
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSearchResponse.SettlementSummaries">
+            <summary>
+            The daily summary of transactions in the settlement search
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSearchResponse.SettlementTransactions">
+            <summary>
+            The details of each transaction in the settlement search
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.SettlementSearchRequest">
+            <summary>
+            Settlement search filter
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSearchRequest.SettlementDate">
+            <summary>
+            The settlement date to be queried. 
+            Note: if a date range is used, SettlementDate will be ignored
+            This should be formatted as YYYY-MM-DD
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSearchRequest.StartDate">
+            <summary>
+            This parameter sets the start of a filtered date range. 
+            Note: if a date range is used, SettlementDate will be ignored
+            This should be formatted as YYYY-MM-DD
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSearchRequest.EndDate">
+            <summary>
+            This parameter sets the end of a filtered date range. 
+            Note: if a date range is used, SettlementDate will be ignored
+            This should be formatted as YYYY-MM-DD
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSearchRequest.ReportMode">
+            <summary>
+            The type of settlement search report to return
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSearchRequest.CardType">
+            <summary>
+            The card type to filter the search by
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSearchRequest.Currency">
+            <summary>
+            The currency to filter the report by. The three digit ISO 4217 currency code 
+            should be used or ALL for all currencies. 
+            This should be in uppercase.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSearchRequest.Page">
+            <summary>
+            The page number to retrieve
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSearchRequest.PageSize">
+            <summary>
+            The number of records to retrieve per page
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.CancelAuthorisationRequest">
+            <summary>
+            The Transaction ID of the Authorisation to capture
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CancelAuthorisationRequest.TransactionId">
+            <summary>
+            The Transaction ID of the Authorisation to capture
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.CancelAuthorisationResponse">
+            <summary>
+            The response from eWAY will contain details as to whether the transaction succeeded or failed
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CancelAuthorisationResponse.ResponseCode">
+            <summary>
+            The authorisation code for this transaction as returned by the bank
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CancelAuthorisationResponse.ResponseMessage">
+            <summary>
+            One or more Response Codes that describes the result of the action performed
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CancelAuthorisationResponse.TransactionID">
+            <summary>
+            A unique identifier that represents the transaction in eWAY’s system
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CancelAuthorisationResponse.TransactionStatus">
+            <summary>
+            Whether the cancel transaction succeeded
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.CapturePaymentRequest">
+            <summary>
+            This set of fields contains the details of the payment being captured.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CapturePaymentRequest.Payment">
+            <summary>
+            Payment detail
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CapturePaymentRequest.TransactionId">
+            <summary>
+            The Transaction ID of the Authorisation to cancel
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.CapturePaymentResponse">
+            <summary>
+            The response from eWAY will contain details as to whether the transaction succeeded or failed
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CapturePaymentResponse.ResponseCode">
+            <summary>
+            The authorisation code for this transaction as returned by the bank
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CapturePaymentResponse.ResponseMessage">
+            <summary>
+            One or more Response Codes that describes the result of the action performed
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CapturePaymentResponse.TransactionID">
+            <summary>
+            A unique identifier that represents the transaction in eWAY’s system
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CapturePaymentResponse.TransactionStatus">
+            <summary>
+            Whether the capture transaction succeeded
+            </summary>
+        </member>
+        <member name="M:eWAY.Rapid.Models.CapturePaymentResponse.getResponseMessages">
+            <summary>
+            The bank/gateway response message as a List
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.CardDetails">
+            <summary>
+            Card Details
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CardDetails.Name">
+            <summary>
+            Name on the card
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CardDetails.Number">
+            <summary>
+            Credit card number (16-21 digits plaintext, Up to 512 chars for eCrypted values)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CardDetails.ExpiryMonth">
+            <summary>
+            2 Digits 
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CardDetails.ExpiryYear">
+            <summary>
+            2 or 4 digits e.g. "15" or "2015"
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CardDetails.StartMonth">
+            <summary>
+            2 digits (required in some countries)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CardDetails.StartYear">
+            <summary>
+            2 or 4 digits (required in some countries)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CardDetails.IssueNumber">
+            <summary>
+            Card issue number (required in some countries)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CardDetails.CVN">
+            <summary>
+            Required for transactions of type Purchase. Optional for other transaction types. (3 or 4 digit number plaintext, up to 512 chars for eCrypted values)
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.CodeDetail">
+            <summary>
+            Code Detail
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CodeDetail.ErrorCode">
+            <summary>
+            The returned Error code.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CodeDetail.DisplayMessage">
+            <summary>
+            Message in association with the Error code.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.CreateCustomerResponse">
+            <summary>
+            The response is returned from a CreateTransaction method call. It will echo back the details of the Customer that has been, or will be, created.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CreateCustomerResponse.Customer">
+            <summary>
+            The Customer created by the method call. This will echo back the properties of the Customer adding the TokenCustomerID for the created customer. 
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CreateCustomerResponse.SharedPaymentUrl">
+            <summary>
+            (Only for payment method of ResponsiveShared) URL to the Responsive Shared Page that the cardholder's browser should be redirected to 
+            to capture the card to save with the new customer.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CreateCustomerResponse.FormActionUrl">
+            <summary>
+            (Only for payment method of TransparentRedirect) URL That the merchant's credit card collection form should post to to capture 
+            the card to be saved with the new customer.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CreateCustomerResponse.AccessCode">
+            <summary>
+            The AccessCode for this transaction (can be used with the customer query method call for searching before and after the card capture is completed)
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.CreateTransactionResponse">
+            <summary>
+            The response is returned from a CreateTransaction method call. This will echo back the details of the Transaction (Customer, Payment, Items, options etc). 
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CreateTransactionResponse.Transaction">
+            <summary>
+            The Transaction as echoed back by the Rapid API. Where a token customer is created as result of the transaction, then the Customer object in the RequestDetails will contain the token ID.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CreateTransactionResponse.TransactionStatus">
+            <summary>
+            (Only for Direct payment methods) This contains the status of the processed transaction. 
+            Any errors that occurred while processing will be reported using the "Errors" member of the CreateTransactionResponse.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CreateTransactionResponse.SharedPaymentUrl">
+            <summary>
+            (Only for payment methods of ResponsiveShared) URL to the Responsive Shared Page that the cardholder's browser should be redirected to to complete payment
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CreateTransactionResponse.FormActionUrl">
+            <summary>
+            (Only for payment methods of TransparentRedirect) URL That the merchant's credit card collection form should post to to complete payment.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CreateTransactionResponse.AccessCode">
+            <summary>
+            The AccessCode for this transaction (can be used to call query transaction for searching before the transaction has completed processing)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.CreateTransactionResponse.AmexECEncryptedData">
+            <summary>
+            (Rapid v40 only) A token used to configure AMEX Express Checkout
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.Customer">
+            <summary>
+            Contains members that define a Rapid token customer (and card) stored in the merchant's account.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.TokenCustomerID">
+            <summary>
+            eWAY Token ID identifying this customer
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.Reference">
+            <summary>
+            Merchant's own reference ID for the customer
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.Title">
+            <summary>
+            Customer's title
+            One of: "Mr.", "Ms.", "Mrs.", "Miss", "Dr.", "Sir.", "Prof."
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.FirstName">
+            <summary>
+            Customer's First Name
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.LastName">
+            <summary>
+            Customer's Last name
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.CompanyName">
+            <summary>
+            Customer's company name
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.JobDescription">
+            <summary>
+            Role or job description
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.Address">
+            <summary>
+            Customer's address
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.Phone">
+            <summary>
+            Customer's Phone
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.Mobile">
+            <summary>
+            Customer's Mobile Phone
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.Email">
+            <summary>
+            Customer's Email Address
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.Fax">
+            <summary>
+            Customer's Fax number
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.Url">
+            <summary>
+            URL for customer's site
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.Comments">
+            <summary>
+            Comments attached to this customer.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.IsActive">
+            <summary>
+            If the customer is active.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.RedirectURL">
+            <summary>
+            (optional) Used by transactions with a CardSource of TransparentRedirect, or ResponsiveShared This field specifies the URL on the 
+            merchant's site that the RapidAPI will redirect the cardholder's browser to after processing the transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.CancelURL">
+            <summary>
+            (optional) Used by transactions with a card source of ResponsiveShared. This field specifies the URL on the merchant's 
+            site that the responsive page will redirect the cardholder to if they choose to cancel the transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.CardDetails">
+            <summary>
+            Used for Direct PaymentMethods The card details for this customer.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.SecuredCardData">
+            <summary>
+            Used for creating a customer with Secure Fields.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Customer.CustomerIP">
+            <summary>
+            The customer’s IP address
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.LineItem">
+            <summary>
+            LineItem
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.LineItem.SKU">
+            <summary>
+            ID of the Line Item's product
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.LineItem.Description">
+            <summary>
+            Product description of the item
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.LineItem.Quantity">
+            <summary>
+            The number of items
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.LineItem.UnitCost">
+            <summary>
+            Price (in cents) of each item
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.LineItem.Tax">
+            <summary>
+            Combined tax (in cents) for all the items
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.LineItem.Total">
+            <summary>
+            Total in cents (including Tax) for all the items.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.NamespaceDoc">
+            <summary>
+            Contains models of the SDK.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.NVPair">
+            <summary>
+            Name Value Pair
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.NVPair.Name">
+            <summary>
+            Name.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.NVPair.Value">
+            <summary>
+            Value.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.Option">
+            <summary>
+            Option
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Option.Value">
+            <summary>
+            Value of the option.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.Payment">
+            <summary>
+            CreateAccessCodeResponse Payment class
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Payment.TotalAmount">
+            <summary>
+            The total amount in cents
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Payment.InvoiceNumber">
+            <summary>
+            The merchant's invoice number
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Payment.InvoiceDescription">
+            <summary>
+            The merchant's invoice description
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Payment.InvoiceReference">
+            <summary>
+            The merchant's invoice reference
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Payment.CurrencyCode">
+            <summary>
+            The currency for this transaction
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.PaymentDetails">
+            <summary>
+            Payment Details
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.PaymentDetails.TotalAmount">
+            <summary>
+            The total amount to charge the card holder in this transaction in cents. e.g. 1000 = $10.00
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.PaymentDetails.InvoiceNumber">
+            <summary>
+            The merchant's invoice number
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.PaymentDetails.InvoiceDescription">
+            <summary>
+            The merchant's invoice description
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.PaymentDetails.InvoiceReference">
+            <summary>
+            The merchant's invoice reference
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.PaymentDetails.CurrencyCode">
+            <summary>
+            The currency for this transaction (e.g. AUD)
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.ProcessingDetails">
+            <summary>
+            Combines together all the bank/gateway specific status information for a transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ProcessingDetails.AuthorisationCode">
+            <summary>
+            The Bank Auth code for the transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ProcessingDetails.ResponseCode">
+            <summary>
+            The bank/gateway Response code
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ProcessingDetails.ResponseMessage">
+            <summary>
+            The bank/gateway response message
+            </summary>
+        </member>
+        <member name="M:eWAY.Rapid.Models.ProcessingDetails.getResponseMessages">
+            <summary>
+            The bank/gateway response message as a List
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.QueryCustomerResponse">
+            <summary>
+            Query Customer Response
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.QueryCustomerResponse.Customers">
+            <summary>
+            List of customers returned.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.QueryTransactionResponse">
+            <summary>
+            This response simply wraps the TransactionStatus type with the additional common fields required by a return type.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.QueryTransactionResponse.Transaction">
+            <summary>
+            The Request as echoed back by the Rapid API. Where a token customer is created as result of the transaction, 
+            then the Customer member in this type will contain the token ID.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.QueryTransactionResponse.TransactionStatus">
+            <summary>
+            This contains the status of the processed transaction. Any errors that occurred during processing will be 
+            reported using the "Errors" member of the QueryTransactionResponse.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.QueryTransactionResponse.AccessCode">
+            <summary>
+            The access code for this transaction. 
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.Refund">
+            <summary>
+            Combines all the high level properties required to process a refund (or Authorisation Cancel)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Refund.TransactionID">
+            <summary>
+            The eWAY transaction ID to search for.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Refund.Customer">
+            <summary>
+            Customer details (name, address, token etc)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Refund.ShippingDetails">
+            <summary>
+            (optional) Shipping Address, name etc for the product ordered with this transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Refund.RefundDetails">
+            <summary>
+            Details of the transaction (amount, currency and invoice information)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Refund.LineItems">
+            <summary>
+            (optional) Invoice Line Items for the purchase
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Refund.Options">
+            <summary>
+            (optional) General Options for the transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Refund.DeviceID">
+            <summary>
+            (optional) Used to supply an identifier for the device sending the transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Refund.PartnerID">
+            <summary>
+            (optional) Used by shopping carts/ partners.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Refund.CustomerIP">
+            <summary>
+            The customer’s IP address
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.RefundDetails">
+            <summary>
+            Contain the banking details for the refund, including the ID of the tranasaction that is to be refunded (or the auth that is to be cancelled).
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundDetails.OriginalTransactionID">
+            <summary>
+            The ID of either the transaction to refund, or the authorisation to cancel.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundDetails.TotalAmount">
+            <summary>
+            The total amount to refund the card holder in this transaction in cents. e.g. 1000 = $10.00
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundDetails.InvoiceNumber">
+            <summary>
+            The merchant's invoice number
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundDetails.InvoiceDescription">
+            <summary>
+            The merchant's invoice description
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundDetails.InvoiceReference">
+            <summary>
+            The merchant's invoice reference
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundDetails.CurrencyCode">
+            <summary>
+            The currency for this transaction
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.RefundResponse">
+            <summary>
+            This Response is returned by the Refund Method. 
+            It wraps the TransactionStatus and the echoed back Refund Type with the standard error fields required by an API return type.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundResponse.AuthorisationCode">
+            <summary>
+            The authorisation code for this transaction as returned by the bank
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundResponse.ResponseCode">
+            <summary>
+            The two digit response code returned from the bank
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundResponse.ResponseMessage">
+            <summary>
+            One or more Response Messages that describes the result of the action performed.
+            If a Beagle Alert is triggered, this may contain multiple codes: e.g. D4405, F7003
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundResponse.TransactionID">
+            <summary>
+            The eWAY transaction ID to search for.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundResponse.TransactionStatus">
+            <summary>
+            This contains the status of the processed refund transaction. 
+            Any errors that occurred during processing will be reported using the "Errors" member of the RefundResponse.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundResponse.Verification">
+            <summary>
+            Verification object returned from RefundResponse.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundResponse.Customer">
+            <summary>
+            Contains members that define a Rapid token customer (and card) stored in the Merchant's account.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.RefundResponse.Refund">
+            <summary>
+            The RefundRequest as echoed back by the Rapid API. 
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.SettlementSummary">
+            <summary>
+            This Response is returned by the Settlement Search Method. 
+            It wraps the settlement summary
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSummary.SettlementID">
+            <summary>
+            The unique ID of the settlement
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSummary.Currency">
+            <summary>
+            The numeric code for the currency of the settlement
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSummary.TotalCredit">
+            <summary>
+            The total amount credited in the settlement in cents
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSummary.TotalDebit">
+            <summary>
+            The total amount debited in this settlement in cents
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSummary.TotalBalance">
+            <summary>
+            The total balance settled in this settlement in cents
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementSummary.BalancePerCardType">
+            <summary>
+            The summary of balances settled for each card type
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.SettlementTransaction">
+            <summary>
+            This Response is returned by the Settlement Search Method. 
+            It wraps the settlement transactions
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementTransaction.SettlementID">
+            <summary>
+            The unique ID of the settlement
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementTransaction.eWAYCustomerID">
+            <summary>
+            The eWAY Customer ID associated with this settlement transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementTransaction.Currency">
+            <summary>
+            The numeric code for the currency of the settlement
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementTransaction.TransactionID">
+            <summary>
+            The unique eWAY Transaction ID associated with this settlement transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementTransaction.TxnReference">
+            <summary>
+            The unique Transaction ID as returned from the bank
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementTransaction.CardType">
+            <summary>
+            The code of the card type of this settlement
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementTransaction.Amount">
+            <summary>
+            The amount of the settlement transaction in cents
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementTransaction.TransactionType">
+            <summary>
+            A numeric representation of the transaction type
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementTransaction.TransactionDateTime">
+            <summary>
+            The GMT date of the transaction 
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.SettlementTransaction.SettlementDateTime">
+            <summary>
+            The GMT date of settlement
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.ShippingAddress">
+            <summary>
+            The ShippingAddress section is optional. It is used by Beagle Fraud Alerts (Enterprise) to calculate a risk score for this transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.FirstName">
+            <summary>
+            The first name of the person the order is shipped to.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.LastName">
+            <summary>
+            The last name of the person the order is shipped to.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.Street1">
+            <summary>
+            The street address the order is shipped to.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.Street2">
+            <summary>
+            The street address of the shipping location.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.City">
+            <summary>
+            The customer’s shipping city / town / suburb.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.State">
+            <summary>
+            The customer’s shipping state / county
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.Country">
+            <summary>
+            The customer’s shipping country. This should be the two letter ISO 3166-1 alpha-2 code. This field must be lower case. e.g. Australia = au
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.PostalCode">
+            <summary>
+            The customer’s shipping post / zip code.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.Email">
+            <summary>
+            The customer’s shipping email address, which must be correctly formatted if present.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.Phone">
+            <summary>
+            The phone number of the person the order is shipped to.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.Fax">
+            <summary>
+            The fax number of the shipping location.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingAddress.ShippingMethod">
+            <summary>
+            The method used to ship the customer’s order. 
+            One of: Unknown, LowCost, DesignatedByCustomer, International, Military, NextDay, StorePickup, TwoDayService, ThreeDayService, Other
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.ShippingDetails">
+            <summary>
+            Combines all the Shipping related information for a transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingDetails.FirstName">
+            <summary>
+            First name on the shipping manifest
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingDetails.LastName">
+            <summary>
+            Last name on the shipping manifest
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingDetails.ShippingMethod">
+            <summary>
+            ShippingMethod enum.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingDetails.ShippingAddress">
+            <summary>
+            Destination of the sale
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingDetails.Email">
+            <summary>
+            Email of the recipient
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingDetails.Phone">
+            <summary>
+            Phone number of the recipient
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.ShippingDetails.Fax">
+            <summary>
+            Fax number of the recipient
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.Transaction">
+            <summary>
+            The details of a transaction that will be processed either via the responsive shared page, 
+            by transparent redirect or by Direct.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.TransactionType">
+            <summary>
+            What type of transaction this is (Purchase, MOTO,etc)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.Capture">
+            <summary>
+            Set to true to create a regular transaction with immediate capture (default).
+            Set to false to create an Authorisation transaction that can be used in a subsequent transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.SaveCustomer">
+            <summary>
+            Set to true to create a token when the payment is processed using Transparent Redirect or Shared Page
+            Set to false to process a standard transaction (default)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.Customer">
+            <summary>
+            Customer details (name address token etc)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.ShippingDetails">
+            <summary>
+            (optional) Shipping Address, name etc for the product ordered with this transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.PaymentDetails">
+            <summary>
+            Payment details (amount, currency and invoice information)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.LineItems">
+            <summary>
+            (optional) Invoice Line Items for the purchase
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.Options">
+            <summary>
+            (optional) General Options for the transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.DeviceID">
+            <summary>
+            (optional) Used to supply an identifier for the device sending the transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.PartnerID">
+            <summary>
+            (optional) Used by shopping carts/ partners.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.ThirdPartyWalletID">
+            <summary>
+            (optional) This field has been deprecated, please use SecuredCardData instead
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.SecuredCardData">
+            <summary>
+            (optional) Card data ID, used for Secure Fields, Visa Checkout, AMEX Express Checkout and Android Pay
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.AuthTransactionID">
+            <summary>
+            (optional) Used with a PaymentType of Authorisation. This specifies the original authorisation that the funds are to be captured from.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.RedirectURL">
+            <summary>
+            (optional) Used by transactions with a CardSource of TransparentRedirect, or ResponsiveShared This field specifies the URL on the 
+            merchant's site that the RapidAPI will redirect the cardholder's browser to after processing the transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.CancelURL">
+            <summary>
+            (optional) Used by transactions with a card source of ResponsiveShared. This field specifies the URL on the merchant's 
+            site that the responsive page redirect the cardholder to if they choose to cancel the transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.CheckoutURL">
+            <summary>
+            (optional) The URL used for the integrating PayPal Checkout
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.CheckoutPayment">
+            <summary>
+            (optional) Flag to set if the PayPal Checkout should be used for this
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.CustomerIP">
+            <summary>
+            The customer’s IP address
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.CustomerReadOnly">
+            <summary>
+            (optional) Used by transactions with a card source of ResponsiveShared. Sets whether customers can edit fields on the Responsive
+            Shared Page
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.Language">
+            <summary>
+            (optional) Used by transactions with a card source of ResponsiveShared. Language code determines the language that the shared page 
+            will be displayed in. One of: EN (English, default), ES (Spanish)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.CustomView">
+            <summary>
+            (optional) Used by transactions with a card source of ResponsiveShared. Set the theme of the Responsive Shared Page from 12 available 
+            themes: Bootstrap, BootstrapAmelia, BootstrapCerulean, BootstrapCosmo, BootstrapCyborg, BootstrapFlatly, BootstrapJournal, 
+            BootstrapReadable, BootstrapSimplex, BootstrapSlate, BootstrapSpacelab, BootstrapUnited
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.VerifyCustomerPhone">
+            <summary>
+            (optional) Used by transactions with a card source of ResponsiveShared. Set whether the customer’s phone number should be confirmed 
+            using Beagle Verify
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.VerifyCustomerEmail">
+            <summary>
+            (optional) Used by transactions with a card source of ResponsiveShared. Set whether the customer’s email should be confirmed using 
+            Beagle Verify
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.HeaderText">
+            <summary>
+            (optional) Used by transactions with a card source of ResponsiveShared. Short text description to be placed under the logo on the shared page.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.LogoUrl">
+            <summary>
+            (optional) Used by transactions with a card source of ResponsiveShared. The URL of the merchant’s logo to display on the shared page. 
+            This must start with https://. 
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.TransactionDateTime">
+            <summary>
+            (v40 query response only) The date and time the transaction took place
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.FraudAction">
+            <summary>
+            (v40 query response only) The fraud action that occurred if any. One of NotChallenged, Allow, Review, PreAuth, Processed, Approved, Block
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.TransactionCaptured">
+            <summary>
+            (v40 query response only) True if funds were captured in the transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.CurrencyCode">
+            <summary>
+            (v40 query response only) The ISO 4217 numeric currency code (e.g. AUD = 036)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.Source">
+            <summary>
+            (v40 query response only) Reserved for future use
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.MaxRefund">
+            <summary>
+            (v40 query response only)  The maximum amount that could be refunded from this transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Transaction.OriginalTransactionId">
+            <summary>
+            (v40 query response only) Contains the original transaction ID if the queried transaction is a refund
+            </summary>
+        </member>
+        <member name="M:eWAY.Rapid.Models.Transaction.#ctor">
+            <summary>
+            Initializes a new instance of the Transaction class
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.TransactionFilter">
+            <summary>
+            Defines a set of parameters used to search for a transaction. This is defined as per the Rapid Transaction Filter. 
+            Only one of the properties should be provided.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.TransactionIDMatchType">
+            <summary>
+            Match Transaction ID.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.TransactionID">
+            <summary>
+            The eWAY transaction ID to search for.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.AccessCodeMatchType">
+            <summary>
+            Match Access code.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.AccessCode">
+            <summary>
+            The access code to search for.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.InvoiceReferenceMatchType">
+            <summary>
+            Match Invoice reference.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.InvoiceReference">
+            <summary>
+            The Invoice reference to search for (merchant supplied). Must be unique to return a transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.InvoiceNumberMatchType">
+            <summary>
+            Match invoice number.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.InvoiceNumber">
+            <summary>
+            The Invoice number to search for (merchant supplied). Must be unique to return a transaction
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.IsValidTransactionID">
+            <summary>
+            Returns true if this transaction filter is for a Transaction ID
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.IsValidAccessCode">
+            <summary>
+            Returns true if this transaction filter is for an Access Code
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.IsValidInvoiceRef">
+            <summary>
+            Returns true if this transaction filter is for an Invoice Reference
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.IsValidInvoiceNum">
+            <summary>
+            Returns true if this transaction filter is for an Invoice Numebr
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionFilter.IsValid">
+            <summary>
+            Returns true if this transaction filter has a search filter set
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.TransactionStatus">
+            <summary>
+            Combines together all the status information for a transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionStatus.TransactionID">
+            <summary>
+            The eWAY transaction ID of the transaction. Will only be set once the transaction has been processed or the Authorisation created.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionStatus.Total">
+            <summary>
+            Total in cents.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionStatus.Status">
+            <summary>
+            True if the transaction/authorisation was successful
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionStatus.Captured">
+            <summary>
+            True if the transaction was passed to the bank and funds captured. Depending on the merchant's anti-fraud settings some transactions 
+            marked as possibly fraudulent may be held for processing until reviewed. In that case this flag will be set to false. 
+            This flag will also be false if the Transaction's 'Capture' flag was set to false (for an explicit authorisation).
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionStatus.BeagleScore">
+            <summary>
+            Floating point number indicating the fraud score.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionStatus.FraudAction">
+            <summary>
+            When an anti-fraud rule has been triggered this will indicate what action was performed with the transaction.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionStatus.VerificationResult">
+            <summary>
+            Status of email, address CVN etc Verification. Also contains Beagle Verify results if the transaction was processed through the responsive shared page.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.TransactionStatus.ProcessingDetails">
+            <summary>
+            All the various bank/gateway specific details associated with the transaction.
+            </summary>
+        </member>
+        <member name="M:eWAY.Rapid.Models.TransactionStatus.hasFraudCode">
+            <summary>
+            Check if the response contains a fraud code
+            </summary>
+        </member>
+        <member name="M:eWAY.Rapid.Models.TransactionStatus.getTransactionID">
+            <summary>
+            Fetches the TransactionID as a string
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.Verification">
+            <summary>
+            Verification object returned from RefundResponse.
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Verification.CVN">
+            <summary>
+            Result of CVN Verification by card processor
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Verification.Address">
+            <summary>
+            Result of Address Verification by card processor
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Verification.Email">
+            <summary>
+            Result of email verification by card processor
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Verification.Mobile">
+            <summary>
+            Result of Mobile verification by card processor
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.Verification.Phone">
+            <summary>
+            Result of phone verification by card processor
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.Models.VerificationResult">
+            <summary>
+            Contains the result of all the Beagle and Payment provider verification (card scheme/bank)	
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.VerificationResult.CVN">
+            <summary>
+            Result of CVN Verification by card processor
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.VerificationResult.Address">
+            <summary>
+            Result of Address Verification by card processor
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.VerificationResult.Email">
+            <summary>
+            Result of email verification by card processor
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.VerificationResult.Mobile">
+            <summary>
+            Result of Mobile verification by card processor
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.VerificationResult.Phone">
+            <summary>
+            Result of phone verification by card processor
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.VerificationResult.BeagleEmail">
+            <summary>
+            Result of email verification from responsive shared page (if processed with a PaymentMethod of ResponsiveShared)
+            </summary>
+        </member>
+        <member name="P:eWAY.Rapid.Models.VerificationResult.BeaglePhone">
+            <summary>
+            Result of phone number verification from responsive shared page (if processed with a PaymentMethod of ResponsiveShared)
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.RapidClientFactory">
+            <summary>
+            Factory class to create an instance of IRapidSdkClient
+            </summary>
+        </member>
+        <member name="M:eWAY.Rapid.RapidClientFactory.NewRapidClient(System.String,System.String,System.String)">
+            <summary>
+            Static method to create a new Rapid SDK Client configured to communicate with eWAY's Rapid API
+            </summary>
+            <param name="apiKey">Rapid API Key</param>
+            <param name="password">Password for the API Key</param>
+            <param name="rapidEndpoint">Possible values ("Production", "Sandbox", or a URL) Production and sandbox will default to the Global Rapid API Endpoints.</param>
+            <returns>Native class/object that can be used to create and access business objects such as customers and transactions. </returns>
+        </member>
+        <member name="M:eWAY.Rapid.RapidClientFactory.UserDisplayMessage(System.String,System.String)">
+            <summary>
+            This static/utility method will provide a message suitable for display to a user corresponding to a given Rapid Code/language.
+            </summary>
+            <param name="errorCode">Rapid API Error Code e.g. "V6023" </param>
+            <param name="language">Language Code, e.g. "EN" (default) or "ES"</param>
+            <returns>String with a description for the given code in the specified language</returns>
+        </member>
+        <member name="T:eWAY.Rapid.RapidSystemErrorCode">
+            <summary>
+            Contains system error codes for the eWAY Rapid library.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.RapidSystemErrorCode.INVALID_ENDPOINT_ERROR">
+            <summary>
+            Invalid endpoint error.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.RapidSystemErrorCode.INVALID_CREDENTIAL_ERROR">
+            <summary>
+            Invalid credential error.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.RapidSystemErrorCode.COMMUNICATION_ERROR">
+            <summary>
+            Communication error.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.RapidSystemErrorCode.AUTHENTICATION_ERROR">
+            <summary>
+            Authentication error.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.RapidSystemErrorCode.INTERNAL_SDK_ERROR">
+            <summary>
+            Internal SDK error.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.SystemConstants">
+            <summary>
+            Contains system constants.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.SystemConstants.INVALID_ERROR_CODE_MESSAGE">
+            <summary>
+            Invalid error code message.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.SystemConstants.DEFAULT_LANGUAGE_CODE">
+            <summary>
+            Default language code.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.GlobalEndpoints">
+            <summary>
+            Contains URLs for Rapid Endpoints.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.GlobalEndpoints.PRODUCTION">
+            <summary>
+            Production Endpoints.
+            </summary>
+        </member>
+        <member name="F:eWAY.Rapid.GlobalEndpoints.SANDBOX">
+            <summary>
+            Sandbox Endpoints.
+            </summary>
+        </member>
+        <member name="T:eWAY.Rapid.NamespaceDoc">
+            <summary>
+            An SDK that wraps the Rapid API 3.1 web services.
+            </summary>
+        </member>
+    </members>
+</doc>
